@@ -41,10 +41,10 @@
             flex-wrap: wrap;
         }
     }
-}
 
-.btns {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3rem;
+    &__btngrp {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
 }
