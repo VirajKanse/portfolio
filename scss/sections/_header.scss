@@ -1,0 +1,50 @@
+header {
+    //border-bottom: 1px solid;
+    position: fixed;
+    width: 100%;
+    padding: 2.5rem 5rem;
+    letter-spacing: 0.2rem;
+    background-color: var(--color-white);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-left: 2rem;
+            color: var(--color-grey);
+        }
+
+        &-logo {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            background-image: url(../assets/brand-logo.webp);
+            background-repeat: no-repeat;
+            background-size: 5rem;
+        }
+    }
+    
+    &__list {
+        display: flex;
+        margin-left: auto;
+        font-size: 1.8rem;
+        font-weight: 600;
+
+        &-item {
+            list-style: none;
+            padding: 1rem 2rem;
+        }
+    }
+}

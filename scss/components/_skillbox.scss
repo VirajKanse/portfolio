@@ -1,0 +1,78 @@
+.skillbox {
+    display: inline-block;
+    padding: 1.8rem 3.1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--color-grey);
+    opacity: 0.9;
+    background-color: #EDF2F7;
+    border-radius: .5rem;
+    margin: 1rem;
+    position: relative;
+    transition: color 0.5s ease-in-out;
+
+    &-html {
+        @include progress(80%);
+    }
+
+    &-css {
+        @include progress(80%);
+    }
+    
+    &-sass {
+        @include progress(90%);
+    }
+
+    &-js {
+        @include progress(60%);
+    }
+
+    &-react {
+        @include progress(60%);
+    }
+
+    &-redux {
+        @include progress(40%);
+    }
+
+    &-node {
+        @include progress(30%);
+    }
+
+    &-chakra {
+        @include progress(80%);
+    }
+
+    &-sql {
+        @include progress(40%);
+    }
+
+    &-linux {
+        @include progress(70%);
+    }
+
+    &-bash {
+        @include progress(50%);
+    }
+
+    &-git {
+        @include progress(90%);
+    }
+
+    &-github {
+        @include progress(90%);
+    }
+
+    &-gcp {
+        @include progress(40%);
+    }
+
+    &-docker {
+        @include progress(50%);
+    }
+
+    &-k8s {
+        @include progress(30%);
+    }
+}

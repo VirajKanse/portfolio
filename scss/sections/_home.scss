@@ -1,0 +1,26 @@
+.home {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-primary2);
+
+    &__heading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--color-white);
+        text-align: center;
+        letter-spacing: 0.3rem;
+    
+        &-primary {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+        }
+
+        &-secondary {
+            font-size: 3rem;
+            font-weight: 400;
+        }
+    }
+}

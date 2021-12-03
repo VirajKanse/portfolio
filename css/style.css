@@ -1,0 +1,560 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --color-primary: #F53B4D;
+  --color-primary2: #F76473;
+  --color-white: #ffffff;
+  --color-grey: #1C222F;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-grey);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: 2.5rem 5rem;
+  letter-spacing: 0.2rem;
+  background-color: var(--color-white);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__brand-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  color: var(--color-grey);
+}
+.navbar__brand-logo {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background-image: url(../assets/brand-logo.webp);
+  background-repeat: no-repeat;
+  background-size: 5rem;
+}
+.navbar__list {
+  display: flex;
+  margin-left: auto;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.navbar__list-item {
+  list-style: none;
+  padding: 1rem 2rem;
+}
+
+.home {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color-primary2);
+}
+.home__heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-white);
+  text-align: center;
+  letter-spacing: 0.3rem;
+}
+.home__heading-primary {
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+.home__heading-secondary {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.about {
+  padding: 15rem;
+  text-align: center;
+  height: 100vh;
+  background-color: #fffcfd;
+}
+.about__heading-sub {
+  color: var(--color-grey);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+.about__container {
+  display: flex;
+  width: 100%;
+}
+.about__text {
+  width: 50%;
+  margin-right: 2rem;
+}
+.about__text-content {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--color-grey);
+  opacity: 0.9;
+  text-align: justify;
+  line-height: 1.4;
+}
+.about__skills {
+  width: 50%;
+  margin-left: 2rem;
+}
+.about__skills-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.projects {
+  text-align: center;
+}
+
+.arrow-down {
+  height: 50px;
+  width: 70px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 350%);
+}
+
+.left-arm {
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  top: 19px;
+  left: 0px;
+  width: 40px;
+  display: block;
+  transform: rotate(45deg);
+}
+.left-arm:after {
+  content: "";
+  background-color: var(--color-white);
+  width: 40px;
+  height: 1px;
+  display: block;
+  border-radius: 1px;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
+  transform-origin: right center;
+  z-index: -1;
+}
+
+.right-arm {
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  top: 19px;
+  left: 27px;
+  width: 40px;
+  display: block;
+  transform: rotate(-45deg);
+  border-radius: 2px;
+}
+.right-arm:after {
+  content: "";
+  background-color: var(--color-white);
+  width: 40px;
+  height: 1px;
+  display: block;
+  border-radius: 1px;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
+  transform-origin: left center;
+  z-index: -1;
+}
+
+.arrow-down:hover {
+  transition: all 0.1s;
+}
+.arrow-down:hover .left-arm:after {
+  height: 2px;
+  transform: rotate(-10deg);
+}
+.arrow-down:hover .right-arm:after {
+  height: 2px;
+  transform: rotate(10deg);
+}
+
+.heading {
+  color: var(--color-grey);
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  margin-bottom: 5rem;
+}
+
+.underline {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.underline::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  bottom: 10%;
+  width: 110%;
+  height: 35%;
+  background-color: #f98994;
+  display: block;
+  z-index: -1;
+}
+
+.btn {
+  display: block;
+  width: 15rem;
+  height: 5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.skillbox {
+  display: inline-block;
+  padding: 1.8rem 3.1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: var(--color-grey);
+  opacity: 0.9;
+  background-color: #EDF2F7;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  position: relative;
+  transition: color 0.5s ease-in-out;
+}
+.skillbox-html::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-html:hover::before {
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-css::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-css:hover::before {
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-sass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-sass:hover::before {
+  width: 90%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-js::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-js:hover::before {
+  width: 60%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-react::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-react:hover::before {
+  width: 60%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-redux::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-redux:hover::before {
+  width: 40%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-node:hover::before {
+  width: 30%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-chakra::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-chakra:hover::before {
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-sql::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-sql:hover::before {
+  width: 40%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-linux::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-linux:hover::before {
+  width: 70%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-bash::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-bash:hover::before {
+  width: 50%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-git::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-git:hover::before {
+  width: 90%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-github::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-github:hover::before {
+  width: 90%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-gcp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-gcp:hover::before {
+  width: 40%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-docker::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-docker:hover::before {
+  width: 50%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+.skillbox-k8s::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  background: var(--color-primary2);
+  z-index: -2;
+  display: block;
+  transition: width 0.5s ease-in-out;
+}
+.skillbox-k8s:hover::before {
+  width: 30%;
+  height: 100%;
+  background-color: var(--color-primary2);
+  border-radius: 0.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

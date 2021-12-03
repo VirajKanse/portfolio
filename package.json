@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Viraj Kanase Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass scss/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VirajKanse/portfolio.git"
+  },
+  "author": "Viraj Kanase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VirajKanse/portfolio/issues"
+  },
+  "homepage": "https://github.com/VirajKanse/portfolio#readme",
+  "dependencies": {
+    "sass": "^1.44.0"
+  }
+}
