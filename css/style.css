@@ -249,7 +249,7 @@ header {
 
 .left {
   width: 40%;
-  background-image: linear-gradient(to top, rgba(245, 59, 77, 0.1), rgba(249, 137, 148, 0.5)), url("../assets/mailbox.jpg");
+  background-image: linear-gradient(to top, rgba(245, 59, 77, 0.1), rgba(249, 137, 148, 0.1)), url("../assets/mailbox.jpg");
   background-blend-mode: screen;
   background-size: cover;
   background-position: center;
@@ -258,6 +258,56 @@ header {
 
 .right {
   width: 60%;
+}
+
+.footer {
+  padding: 10rem 15rem;
+  background-color: var(--color-primary2);
+  color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+}
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer__brand-name {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  margin: 1rem 0;
+}
+.footer__brand-logo {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  background-image: url(../assets/brand-logo.webp);
+  background-repeat: no-repeat;
+  background-size: 8rem;
+}
+.footer__brand-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.footer__copyright {
+  font-size: 1.5rem;
+  align-self: flex-end;
+}
+.footer__socials__title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+}
+.footer__socials__links {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+.footer__socials__link {
+  margin-bottom: 1rem;
+  width: 2.5rem;
 }
 
 .arrow-down {
