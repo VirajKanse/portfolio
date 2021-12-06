@@ -3,6 +3,10 @@
     text-align: center;
     height: 100vh;
     background-color: #fffcfd;
+
+    @include respond(tab-land) {
+        padding: 5rem;
+    }
     
     &__heading-sub {
         color: var(--color-grey);
@@ -36,7 +40,6 @@
 
         &-grid {
             display: flex;
-            //flex-direction: row-reverse;
             justify-content: space-between;
             flex-wrap: wrap;
         }
