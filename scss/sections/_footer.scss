@@ -5,6 +5,10 @@
     display: flex;
     justify-content: space-between;
 
+    @include respond(tab-land) {
+        padding: 5rem 8rem;
+    }
+
     &__brand {
         display: flex;
         flex-direction: column;
