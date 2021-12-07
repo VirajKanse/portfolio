@@ -6,8 +6,18 @@
 
     @include respond(tab-land) {
         padding: 5rem;
+        height: auto;
     }
     
+    &__container {
+        display: flex;
+        width: 100%;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+        }
+    }
+
     &__heading-sub {
         color: var(--color-grey);
         text-align: center;
@@ -15,14 +25,15 @@
         margin-bottom: 3rem;
     }
 
-    &__container {
-        display: flex;
-        width: 100%;
-    }
-
     &__text {
         width: 50%;
         margin-right: 2rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-right: 0rem;
+            margin-bottom: 5rem;
+        }
 
         &-content {
             font-size: 1.7rem;
@@ -34,13 +45,22 @@
 
             @include respond(tab-land) {
               font-size: 1.5rem;
-          }
+            }
+
+            @include respond(tab-port) {
+                font-size: 1.6rem;
+            }
         }
     }
 
     &__skills {
         width: 50%;
         margin-left: 2rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-left: 0rem;
+        }
 
         &-grid {
             display: flex;
