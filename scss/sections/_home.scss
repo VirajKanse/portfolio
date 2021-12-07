@@ -21,6 +21,10 @@
             @include respond(tab-land) {
                 font-size: 4.5rem;
             }
+
+            @include respond(tab-port) {
+                font-size: 3.5rem;
+            }
         }
 
         &-secondary {
@@ -29,6 +33,10 @@
 
             @include respond(tab-land) {
                 font-size: 2.5rem;
+            }
+
+            @include respond(tab-port) {
+                font-size: 2rem;
             }
         }
     }
