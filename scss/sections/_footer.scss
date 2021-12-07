@@ -9,6 +9,10 @@
         padding: 5rem 8rem;
     }
 
+    @include respond(tab-port) {
+        padding: 2rem 4rem;
+    }
+
     &__brand {
         display: flex;
         flex-direction: column;
@@ -19,6 +23,10 @@
             font-weight: 900;
             letter-spacing: .1rem;
             margin: 1rem 0;
+
+            @include respond(tab-port) {
+                font-size: 2rem;
+            }
         }
 
         &-logo {
@@ -28,18 +36,32 @@
             background-image: url(../assets/brand-logo.webp);
             background-repeat: no-repeat;
             background-size: 8rem;
+
+            @include respond(tab-port) {
+                height: 6rem;
+                width: 6rem;
+                background-size: 6rem;
+            }
         }
 
         &-text {
             font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: .1rem;
+
+            @include respond(tab-port) {
+                font-size: 1.2rem;
+            }
         }
     }
 
     &__copyright {
         font-size: 1.5rem;
         align-self: flex-end;
+
+        @include respond(tab-port) {
+            font-size: 1.4rem;
+        }
     }
 
     &__socials {
@@ -47,6 +69,10 @@
             font-size: 3rem;
             font-weight: 800;
             letter-spacing: .1rem;
+
+            @include respond(tab-port) {
+                font-size: 2rem;
+            }
         }   
 
         &__links {
@@ -58,6 +84,10 @@
         &__link {
             margin-bottom: 1rem;
             width: 2.5rem;
+
+            @include respond(tab-port) {
+                width: 2rem;
+            }
         }
     }
 }
