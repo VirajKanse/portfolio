@@ -18,6 +18,10 @@
       margin: .5rem;
     }
 
+    @include respond(tab-port) {
+        margin: 1rem;
+    }
+
     &-html {
         @include progress(80%);
     }
