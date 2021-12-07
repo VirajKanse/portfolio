@@ -3,12 +3,16 @@
     text-align: center;
 
     @include respond(tab-land) {
-        padding: 10rem;
+        padding: 10rem 10rem 5rem 10rem;
     }
 
     &__container {
         display: flex;
         justify-content: space-between;
+
+        @include respond(tab-port) {
+            flex-direction: column;
+        }
     }
 
     &__card {
@@ -21,6 +25,11 @@
 
         @include respond(tab-land) {
             width: 45%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 5rem;
         }
 
         &__img {
