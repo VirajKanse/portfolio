@@ -9,13 +9,21 @@ header {
     @include respond(tab-land) {
         padding: 2.2rem 3rem;
     }
+
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
 }
 
 .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    letter-spacing: 0.2rem;
+    letter-spacing: .2rem;
+
+    @include respond(tab-port) {
+        letter-spacing: .1rem;
+    }
 
     &__brand {
         display: flex;
@@ -31,6 +39,11 @@ header {
             @include respond(tab-land) {
                 font-size: 1.8rem;
             }
+
+            @include respond(tab-port) {
+                font-size: 1.6rem;
+                margin-left: 1rem;
+            }
         }
 
         &-logo {
@@ -40,6 +53,12 @@ header {
             background-image: url(../assets/brand-logo.webp);
             background-repeat: no-repeat;
             background-size: 5rem;
+
+            @include respond(tab-port) {
+                height: 4.5rem;
+                width: 4.5rem;
+                background-size: 4.5rem;
+            }
         }
     }
     
@@ -53,9 +72,17 @@ header {
             font-size: 1.6rem;
         }
 
+        @include respond(tab-port) {
+            font-size: 1.3rem;
+        }
+
         &-item {
             list-style: none;
             padding: 1rem 2rem;
+
+            @include respond(tab-port) {
+                padding: 1rem;
+            }
         }
     }
 }
