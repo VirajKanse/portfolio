@@ -6,6 +6,11 @@
     box-sizing: inherit;
 }
 
+*:focus, *:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 :root {
     --color-primary: #F53B4D;
     --color-primary2: #F76473;
@@ -26,4 +31,8 @@ body {
 a {
     text-decoration: none;
     color: var(--color-grey);
+
+    @include respond(phone) {
+        color: var(--color-white);
+    }
 }

@@ -13,6 +13,10 @@ header {
     @include respond(tab-port) {
         padding: 2rem;
     }
+
+    @include respond(phone) {
+        position: static;
+    }
 }
 
 .navbar {
@@ -23,6 +27,10 @@ header {
 
     @include respond(tab-port) {
         letter-spacing: .1rem;
+    }
+
+    @include respond(phone) {
+        justify-content: space-between;
     }
 
     &__brand {
@@ -76,6 +84,20 @@ header {
             font-size: 1.3rem;
         }
 
+        @include respond(phone) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--color-primary2);
+            width: 100%;
+            height: 100vh;
+            z-index: 6;
+            flex-direction: column;
+            padding: 20rem;
+            align-items: center;
+            font-size: 4rem;
+        }
+
         &-item {
             list-style: none;
             padding: 1rem 2rem;
@@ -83,6 +105,40 @@ header {
             @include respond(tab-port) {
                 padding: 1rem;
             }
+        }
+    }
+
+    &__icon {
+        display: none;
+
+        @include respond(phone) {
+            display: inline;
+            position: fixed;
+            left: 84%;
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background: linear-gradient(to bottom right, rgba(247, 101, 116, .8), rgba(255, 255, 255, 1.0));
+            z-index: 7;
+        }
+    }
+
+    &__toggle-menu {
+        display: none;
+        
+        @include respond(phone) {
+            display: inline;
+            width: 2rem;
+            height: 2rem;
+            margin-top: 1.3rem;
+            margin-left: 1.2rem;
+            z-index: 6;
+        }
+    }
+
+    &__show {
+        @include respond(phone) {
+            display: none;
         }
     }
 }
