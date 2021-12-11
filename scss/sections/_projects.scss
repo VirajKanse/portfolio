@@ -6,6 +6,10 @@
         padding: 10rem 10rem 5rem 10rem;
     }
 
+    @include respond(phone) {
+        padding: 5rem 3rem 5rem 3rem;
+    }
+
     &__container {
         display: flex;
         justify-content: space-between;
@@ -44,6 +48,10 @@
             font-weight: 700;
             color: var(--color-grey);
             margin: 0 0 2rem 0;
+
+            @include respond(phone) {
+                font-size: 2rem;
+            }
         }
 
         &__details {

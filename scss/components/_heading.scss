@@ -10,4 +10,8 @@
         letter-spacing: .1rem;
         margin-bottom: 4rem;
     }
+
+    @include respond(phone) {
+        font-size: 3rem;
+    }
 }

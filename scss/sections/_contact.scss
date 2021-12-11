@@ -10,6 +10,10 @@
     @include respond(tab-port) {
         padding: 10rem 5rem 5rem 5rem;
     }
+
+    @include respond(phone) {
+        padding: 5rem 2rem 5rem 2rem;
+    }
     
     &__container {
         display: flex;
@@ -96,8 +100,16 @@
     @include respond(tab-port) {
         height: 43rem;
     }
+
+    @include respond(phone) {
+        display: none;
+    }
 }
 
 .right {
     width: 60%;
+
+    @include respond(phone) {
+        width: 100%;
+    }
 }

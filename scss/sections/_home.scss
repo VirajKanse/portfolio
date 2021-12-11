@@ -11,6 +11,11 @@
         color: var(--color-white);
         text-align: center;
         letter-spacing: 0.3rem;
+        width: 80%;
+
+        @include respond(phone) {
+            width: 80%;
+        }
     
         &-primary {
             font-size: 5rem;
@@ -25,6 +30,11 @@
             @include respond(tab-port) {
                 font-size: 3.5rem;
             }
+
+            @include respond(phone) {
+                font-size: 2.5rem;
+                white-space: initial;
+            }
         }
 
         &-secondary {
@@ -36,7 +46,7 @@
             }
 
             @include respond(tab-port) {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
     }

@@ -22,6 +22,11 @@
         margin: 1rem;
     }
 
+    @include respond(phone) {
+        padding: 1.5rem 2rem;
+        margin: .5rem
+    }
+
     &-html {
         @include progress(80%);
     }
