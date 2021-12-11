@@ -1,9 +1,29 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+
+*:focus, *:active {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
@@ -27,22 +47,12 @@ a {
   text-decoration: none;
   color: var(--color-grey);
 }
+@media only screen and (max-width: 37.5em) {
+  a {
+    color: var(--color-white);
+  }
+}
 
-/*
-0 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
-
-$breakpoint arguement choices:
-- phone
-- tab-port
-- tab-land
-- big-desktop
-
-1em = 16px
-*/
 header {
   position: fixed;
   width: 100%;
@@ -61,6 +71,11 @@ header {
     padding: 2rem;
   }
 }
+@media only screen and (max-width: 37.5em) {
+  header {
+    position: static;
+  }
+}
 
 .navbar {
   display: flex;
@@ -71,6 +86,11 @@ header {
 @media only screen and (max-width: 56.25em) {
   .navbar {
     letter-spacing: 0.1rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .navbar {
+    justify-content: space-between;
   }
 }
 .navbar__brand {
@@ -126,6 +146,21 @@ header {
     font-size: 1.3rem;
   }
 }
+@media only screen and (max-width: 37.5em) {
+  .navbar__list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--color-primary2);
+    width: 100%;
+    height: 100vh;
+    z-index: 6;
+    flex-direction: column;
+    padding: 20rem;
+    align-items: center;
+    font-size: 4rem;
+  }
+}
 .navbar__list-item {
   list-style: none;
   padding: 1rem 2rem;
@@ -133,6 +168,39 @@ header {
 @media only screen and (max-width: 56.25em) {
   .navbar__list-item {
     padding: 1rem;
+  }
+}
+.navbar__icon {
+  display: none;
+}
+@media only screen and (max-width: 37.5em) {
+  .navbar__icon {
+    display: inline;
+    position: fixed;
+    left: 84%;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, rgba(247, 101, 116, 0.8), white);
+    z-index: 7;
+  }
+}
+.navbar__toggle-menu {
+  display: none;
+}
+@media only screen and (max-width: 37.5em) {
+  .navbar__toggle-menu {
+    display: inline;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 1.3rem;
+    margin-left: 1.2rem;
+    z-index: 6;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .navbar__show {
+    display: none;
   }
 }
 
@@ -149,6 +217,12 @@ header {
   color: var(--color-white);
   text-align: center;
   letter-spacing: 0.3rem;
+  width: 80%;
+}
+@media only screen and (max-width: 37.5em) {
+  .home__heading {
+    width: 80%;
+  }
 }
 .home__heading-primary {
   font-size: 5rem;
@@ -161,6 +235,17 @@ header {
     font-size: 4.5rem;
   }
 }
+@media only screen and (max-width: 56.25em) {
+  .home__heading-primary {
+    font-size: 3.5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .home__heading-primary {
+    font-size: 2.5rem;
+    white-space: initial;
+  }
+}
 .home__heading-secondary {
   font-size: 3rem;
   font-weight: 400;
@@ -170,16 +255,35 @@ header {
     font-size: 2.5rem;
   }
 }
+@media only screen and (max-width: 56.25em) {
+  .home__heading-secondary {
+    font-size: 1.5rem;
+  }
+}
 
 .about {
   padding: 15rem;
   text-align: center;
-  height: 100vh;
+  height: auto;
   background-color: #fffcfd;
 }
 @media only screen and (max-width: 75em) {
   .about {
-    padding: 5rem;
+    padding: 10rem 5rem 5rem 5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .about {
+    padding: 5rem 2rem 2rem 2rem;
+  }
+}
+.about__container {
+  display: flex;
+  width: 100%;
+}
+@media only screen and (max-width: 56.25em) {
+  .about__container {
+    flex-direction: column;
   }
 }
 .about__heading-sub {
@@ -188,13 +292,21 @@ header {
   font-size: 2.5rem;
   margin-bottom: 3rem;
 }
-.about__container {
-  display: flex;
-  width: 100%;
+@media only screen and (max-width: 37.5em) {
+  .about__heading-sub {
+    font-size: 2rem;
+  }
 }
 .about__text {
   width: 50%;
   margin-right: 2rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .about__text {
+    width: 100%;
+    margin-right: 0rem;
+    margin-bottom: 5rem;
+  }
 }
 .about__text-content {
   font-size: 1.7rem;
@@ -209,9 +321,20 @@ header {
     font-size: 1.5rem;
   }
 }
+@media only screen and (max-width: 56.25em) {
+  .about__text-content {
+    font-size: 1.6rem;
+  }
+}
 .about__skills {
   width: 50%;
   margin-left: 2rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .about__skills {
+    width: 100%;
+    margin-left: 0rem;
+  }
 }
 .about__skills-grid {
   display: flex;
@@ -230,12 +353,22 @@ header {
 }
 @media only screen and (max-width: 75em) {
   .projects {
-    padding: 10rem;
+    padding: 10rem 10rem 5rem 10rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .projects {
+    padding: 5rem 3rem 5rem 3rem;
   }
 }
 .projects__container {
   display: flex;
   justify-content: space-between;
+}
+@media only screen and (max-width: 56.25em) {
+  .projects__container {
+    flex-direction: column;
+  }
 }
 .projects__card {
   display: flex;
@@ -250,6 +383,12 @@ header {
     width: 45%;
   }
 }
+@media only screen and (max-width: 56.25em) {
+  .projects__card {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+}
 .projects__card__img {
   width: 100%;
   height: 100%;
@@ -261,6 +400,11 @@ header {
   font-weight: 700;
   color: var(--color-grey);
   margin: 0 0 2rem 0;
+}
+@media only screen and (max-width: 37.5em) {
+  .projects__card__title {
+    font-size: 2rem;
+  }
 }
 .projects__card__details {
   padding: 0 1rem 1rem 1rem;
@@ -298,7 +442,17 @@ header {
 }
 @media only screen and (max-width: 75em) {
   .contact {
-    padding: 10rem;
+    padding: 10rem 10rem 5rem 10rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .contact {
+    padding: 10rem 5rem 5rem 5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .contact {
+    padding: 5rem 2rem 5rem 2rem;
   }
 }
 .contact__container {
@@ -310,6 +464,11 @@ header {
 .contact__form {
   padding: 5rem;
   width: 100%;
+}
+@media only screen and (max-width: 56.25em) {
+  .contact__form {
+    padding: 2rem;
+  }
 }
 .contact__btn {
   margin: 1rem 0;
@@ -324,6 +483,11 @@ header {
   color: var(--color-grey);
   letter-spacing: 0.1rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .contact label {
+    margin: 0.5rem 0;
+  }
+}
 .contact input[type=text], .contact input[type=email], .contact textarea {
   width: 100%;
   height: 5rem;
@@ -337,6 +501,12 @@ header {
   background-color: #f5f5f5;
   resize: none;
 }
+@media only screen and (max-width: 56.25em) {
+  .contact input[type=text], .contact input[type=email], .contact textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
 .contact input[type=text]:focus, .contact input[type=email]:focus, .contact textarea:focus {
   outline: none;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
@@ -344,6 +514,15 @@ header {
 }
 .contact input[type=text]:focus:invalid, .contact input[type=email]:focus:invalid, .contact textarea:focus:invalid {
   border-bottom: 3px solid #ff7730;
+}
+.contact textarea {
+  height: 20rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .contact textarea {
+    height: 10rem;
+    padding: 1rem;
+  }
 }
 
 .left {
@@ -354,22 +533,49 @@ header {
   background-position: center;
   background-repeat: no-repeat;
 }
+@media only screen and (max-width: 56.25em) {
+  .left {
+    height: 43rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .left {
+    display: none;
+  }
+}
 
 .right {
   width: 60%;
 }
+@media only screen and (max-width: 37.5em) {
+  .right {
+    width: 100%;
+  }
+}
 
 .footer {
-  padding: 10rem 15rem;
+  padding: 10rem 15rem 5rem 15rem;
   background-color: var(--color-primary2);
   color: var(--color-white);
-  display: flex;
-  justify-content: space-between;
 }
 @media only screen and (max-width: 75em) {
   .footer {
-    padding: 5rem 8rem;
+    padding: 5rem 8rem 4rem 5rem;
   }
+}
+@media only screen and (max-width: 56.25em) {
+  .footer {
+    padding: 2rem 4rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .footer {
+    padding: 2rem 3rem 1rem 3rem;
+  }
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
 }
 .footer__brand {
   display: flex;
@@ -382,6 +588,17 @@ header {
   letter-spacing: 0.1rem;
   margin: 1rem 0;
 }
+@media only screen and (max-width: 56.25em) {
+  .footer__brand-name {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .footer__brand-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
 .footer__brand-logo {
   height: 8rem;
   width: 8rem;
@@ -390,28 +607,89 @@ header {
   background-repeat: no-repeat;
   background-size: 8rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .footer__brand-logo {
+    height: 6rem;
+    width: 6rem;
+    background-size: 6rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .footer__brand-logo {
+    height: 5rem;
+    width: 5rem;
+    background-size: 5rem;
+  }
+}
 .footer__brand-text {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .footer__brand-text {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .footer__brand-text {
+    font-size: 1rem;
+  }
+}
 .footer__copyright {
   font-size: 1.5rem;
-  align-self: flex-end;
+  text-align: center;
+  margin-top: 1rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .footer__copyright {
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .footer__copyright {
+    font-size: 1rem;
+  }
 }
 .footer__socials__title {
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: 0.1rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .footer__socials__title {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .footer__socials__title {
+    font-size: 1.5rem;
+  }
+}
 .footer__socials__links {
   display: flex;
   margin-top: 1rem;
   flex-direction: column;
 }
+@media only screen and (max-width: 37.5em) {
+  .footer__socials__links {
+    flex-direction: row;
+  }
+}
 .footer__socials__link {
   margin-bottom: 1rem;
   width: 2.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .footer__socials__link {
+    width: 2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .footer__socials__link {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
 }
 
 .arrow-down {
@@ -491,6 +769,18 @@ header {
   letter-spacing: 0.3rem;
   margin-bottom: 5rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .heading {
+    font-size: 3.5rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 4rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .heading {
+    font-size: 3rem;
+  }
+}
 
 .underline {
   position: relative;
@@ -522,6 +812,13 @@ header {
   color: var(--color-white);
   cursor: pointer;
 }
+@media only screen and (max-width: 37.5em) {
+  .btn {
+    width: 13rem;
+    height: 4.5rem;
+    font-size: 1.3rem;
+  }
+}
 
 .skillbox {
   display: inline-block;
@@ -541,6 +838,17 @@ header {
   .skillbox {
     font-size: 1.5rem;
     padding: 1.5rem 3rem;
+    margin: 0.5rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .skillbox {
+    margin: 1rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .skillbox {
+    padding: 1.5rem 2rem;
     margin: 0.5rem;
   }
 }
